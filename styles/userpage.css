@@ -1,0 +1,223 @@
+.categoryheader
+{
+	background-color: rgb(25, 125, 75);
+	width: 100%;
+	font-size: 24px;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	color: white;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.75);
+}
+
+input[type=checkbox] 
+{
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  vertical-align: bottom;
+}
+
+.custom-checkbox {
+	width: 0px;
+  height: 0px;
+  font-size: 0px;
+  vertical-align: bottom;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox+label
+{
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.custom-checkbox+label::before 
+{
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid rgb(25, 125, 75);
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.custom-checkbox::hover
+{
+	box-shadow: 0 0 5px rgb(50, 150, 100);
+}
+
+.custom-checkbox:checked+label::before {
+  border-color: rgb(25, 125, 75);
+  background-color: rgb(50, 150, 100);
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/*стили при наведении курсора на checkbox*/
+.custom-checkbox:not(:disabled)+label:hover::before {
+  border-color: rgb(25, 125, 75);
+  box-shadow: 0 0 5px rgb(50, 150, 100);
+  cursor: pointer;
+}
+
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.custom-checkbox:not(:disabled):active+label::before {
+  border-color: rgb(25, 125, 75);
+  box-shadow: 0 0 5px rgb(25, 125, 75);
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox:focus+label::before {
+	border-color: rgb(25, 125, 75);
+  /*box-shadow: 0 0 3px rgb(50, 150, 100);*/
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox:focus:not(:checked)+label::before {
+  border-color: rgb(25, 125, 75);
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox:disabled+label::before {
+  background-color: white;
+}
+
+.fullwrapper
+{
+	display: inline-grid;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.halfwrapper
+{
+	display: inline-grid;
+	width: 50%;
+	box-sizing: border-box;
+	padding: 10px;
+}
+
+.accauntpanel
+{
+	padding: 20px;
+	background-color: white;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	font-size: 18px;
+}
+
+/*@media screen and (max-width: 1500px)
+{
+	*
+	{
+		font-size: 14px;
+	}
+}*/
+
+
+
+#userprofile
+{
+	display: ;
+}
+#useractivecars
+{
+	display: ;
+	margin-left: 20%;
+}
+#userpayment
+{
+	display: ;
+	margin-left: 20%;
+}
+#userpastcars
+{
+	display: ;
+	margin-left: 20%;
+}
+.accauntpanel > img
+{
+	padding: 0;
+	height: calc(194px - 40px);
+	display: inline;
+	float: left;
+	margin-right: 20px;
+
+}
+.buybutton
+{
+	margin-left: auto;
+  	margin-right: auto;
+	font-size: 18px;
+	font-weight: bold;
+	width: 200px;
+	background-color: rgb(25, 125, 75);
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.75);
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+	padding: 10px;
+	padding-left: 0px;
+	padding-right: 0px;
+	color: white;
+	margin-top: 20px;
+	user-select: none;
+	transition: 0.2s;
+}
+
+.buybutton:hover
+{
+	box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.85);
+	background-color: rgb(25, 125, 75)
+}
+
+.buybutton:active
+{
+	transform: translateY(2px);
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.75);
+}
+
+
+@media screen and (max-width: 1650px)
+{
+	.halfwrapper
+	{
+		width: 100%;
+	}	
+}
+
+/*@media screen and (max-width: 1300px)
+{
+	.halfwrapper
+	{
+		width: 100%;
+	}
+	.accauntpanel
+	{
+		font-size: 14px;
+	}
+	.accauntpanel > img
+	{
+		padding: 0;
+		height: 118px;
+		display: inline;
+		float: left;
+		margin-right: 20px;
+
+	}	
+}*/
