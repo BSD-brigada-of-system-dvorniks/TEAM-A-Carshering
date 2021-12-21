@@ -1,17 +1,96 @@
 .categoryheader
 {
+
 	background-color: rgb(25, 125, 75);
 	width: 100%;
 	font-size: 24px;
 	font-weight: bold;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 20px;
-	padding-right: 20px;
-	width: calc(100% - 40px);
-	text-align: center;
+	padding: 10px;
+
 	color: white;
 	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.75);
+	box-sizing: border-box;
+}
+
+.carwrapper
+{
+	display: inline-grid;
+	width: 33.333%;*/
+	box-sizing: border-box;
+	margin-top: 10px;
+	padding-left: 0px;
+	padding-right: 20px;
+	/*box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);*/
+	min-height: calc(100% - 178px);
+	height: inherit;
+}
+
+.carwrapper2
+{
+	display: inline-grid;
+	width: 30%;
+	box-sizing: border-box;
+
+	
+}
+
+.car
+{
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	align-content: center;
+	align-items: center;
+	box-sizing: border-box;
+	background-color: white;
+	padding: 20px;
+	height: ;
+	text-align: left;
+}
+
+.carpanel
+{
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	background-color: white;
+}
+.buyimg
+{
+	width: 100%
+}
+.leftcell
+{
+	font-weight: normal;
+	font-size: 24px;
+	text-align: left;
+	
+}
+
+.rightcell
+{
+	font-weight: normal;
+	font-size: 24px;
+	text-align: right;
+}
+
+input[type="datetime-local"]{
+    background-color: white;/*rgb(25, 125, 75);*/
+    padding: 10px;
+    color: black;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: rgba(25, 125, 75, 0);
+    /*filter: invert(1);*/
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+
 }
 
 input[type=checkbox] 
@@ -23,13 +102,10 @@ input[type=checkbox]
 }
 
 .custom-checkbox {
-	width: 0px;
-  height: 0px;
-  font-size: 0px;
+	font-size: 18px;
   vertical-align: bottom;
   position: absolute;
-  z-index: -1;
-  opacity: 0;
+
 }
 
 .custom-checkbox+label
@@ -44,8 +120,7 @@ input[type=checkbox]
 {
   content: '';
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  
   flex-shrink: 0;
   flex-grow: 0;
   border: 1px solid rgb(25, 125, 75);
@@ -124,6 +199,35 @@ input[type=checkbox]
 	font-size: 18px;
 }
 
+/*@media screen and (max-width: 1500px)
+{
+	*
+	{
+		font-size: 14px;
+	}
+}*/
+
+
+
+#userprofile
+{
+	display: ;
+}
+#useractivecars
+{
+	display: ;
+	margin-left: 20%;
+}
+#userpayment
+{
+	display: ;
+	margin-left: 20%;
+}
+#userpastcars
+{
+	display: ;
+	margin-left: 20%;
+}
 .accauntpanel > img
 {
 	padding: 0;
@@ -166,20 +270,6 @@ input[type=checkbox]
 	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.75);
 }
 
-/*#useractivecars
-{
-	display: none;
-}
-
-#userpayment
-{
-	display: none;
-}
-
-#userpastcars
-{
-	display: none;
-}*/
 
 @media screen and (max-width: 1650px)
 {

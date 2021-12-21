@@ -24,9 +24,26 @@
 	padding: 10px;
 }
 
+#reg_form
+{
+	
+}
+
+.hidden
+{
+	display: none;
+}
 .accauntwrapper
 {
 	display: inline-grid;
+	width: ;
+	box-sizing: border-box;
+	padding: 10px;
+	text-align: ;
+}
+.accauntwrapper.hidden
+{
+	display: none;
 	width: ;
 	box-sizing: border-box;
 	padding: 10px;
@@ -43,7 +60,7 @@
 .loginform
 {
 	text-align: left;
-	padding-bottom: 20px;
+	padding-bottom: 0px;
 	padding-top: 20px;
 }
 .loginform > input
@@ -112,3 +129,4 @@
 	transform: translateY(2px);
 	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.75);
 }
+

@@ -9,16 +9,15 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<script defer src="scripts/jquery-3.6.0.js"></script>
+	<script defer src="scripts/userpage.js"></script>
 </head>
 <body>
-	<div class="cover">
-		
-	</div>
 	<div class="menu" align="center">
 		<div class="menulist">
 			<a href="index.html" class="logolink"><span style="color: rgb(25, 125, 75);"><i class="fas fa-car"></i></span></a>
 			<a href="index.html" class="logolink">KAR-CARS</a>
-			<a href="" class="menulink2"><i class="far fa-user-circle"></i></a><a href="" class="menulink2">Увійти</a>
+			<span id="userpagelink" class="menulink2"><a href="" class="menulink2"><i class="far fa-user-circle"></i></a><a id="userpagelink" class="menulink2">Особистий кабінет</a></span>
 		</div>
 	</div>
 	
@@ -48,19 +47,19 @@
 			<div class="fullwrapper">
 				<div class="accauntpanel" align="left">
 					<span style="color: rgba(25, 125, 75); margin-right: 10px; "><i class="fas fa-user"></i></span>
-					<b>Ім'я користувача</b>
+					<b id="username">Ім'я користувача</b>
 					<span style="color: rgba(25, 125, 75, 1); box-shadow: 0 2px 0px rgba(25, 125, 75, 1); сursor: pointer; float: right; cursor: pointer" cursor="pointer">
 						<i class="fas fa-edit"></i> Змінити
 					</span>
 					<p></p>
 					<span style="color: rgba(25, 125, 75); margin-right: 10px;"><i class="fas fa-phone-alt"></i></span>
-					<b>Номер телефону</b>
+					<b id="userlogin">Номер телефону</b>
 					<span style="color: rgba(25, 125, 75, 1); box-shadow: 0 2px 0px rgba(25, 125, 75, 1); сursor: pointer; float: right; cursor: pointer" cursor="pointer">
 						<i class="fas fa-edit"></i> Змінити
 					</span>
 					<p></p>
 					<span style="color: rgba(25, 125, 75); margin-right: 10px;"><i class="fas fa-envelope"></i></span>
-					<b>E-mail</b>
+					<b id="userlogin2">E-mail</b>
 					<span style="color: rgba(25, 125, 75, 1);  box-shadow: 0 2px 0px rgba(25, 125, 75, 1); cursor: pointer; float: right;" cursor="pointer">
 						<i class="fas fa-edit"></i> Змінити
 					</span>
@@ -69,14 +68,14 @@
 					<div class="buybutton">
 						Змінити пароль
 					</div>
-					<div class="buybutton">
+					<div class="buybutton" id="exitbutton">
 						Вихід
 					</div>
 				</div>
 			</div>
 		</div>
 		
-		<div class="newstable" id="useractivecars" align="left">
+		<div class="newstable hidden" id="useractivecars">
 			<div class="halfwrapper">
 				<div class="accauntpanel" align="left">
 					<img src="images/qrcode3.png">
@@ -121,7 +120,7 @@
 			</div>
 		</div>
 
-		<div class="newstable" id="userpayment">
+		<div class="newstable hidden" id="userpayment">
 			<div class="fullwrapper">
 				<div class="accauntpanel" align="left">
 					<span style="color: rgba(25, 125, 75); margin-right: 10px;"><i class="fas fa-credit-card"></i></span><b>Картка Visa</b>
@@ -138,7 +137,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="newstable" id="userpastcars">
+
+		<div class="newstable hidden" id="userpastcars">
 			<div class="halfwrapper">
 				<div class="accauntpanel" align="left">
 					<img src="images/qrcode3.png" height="154px">
@@ -203,15 +203,14 @@
 			</div>
 		</div>
 	</div>
-	</div>
 
 	<div class="bottommenu">
 		<div class="bottommenulist">
-		<a href="" class="menulink">Контакты</a>
+		<a href="" class="menulink">Контакти</a>
 		<a href="" class="menulink">Правовая информация</a>
 		<span style="font-size: 24px; color: white; float: right; margin-left: 20px; padding-left: 10px;">
   			<i class="fab fa-telegram"></i>
-  			<i class="fab fa-vk"></i>
+  			<!--<i class="fab fa-vk"></i>-->
 		</span>
 		</div>
 	</div>

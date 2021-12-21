@@ -67,6 +67,7 @@ html, body
 	text-decoration: none;
 	color: black;
 	transition: text-decoration 300ms;
+	cursor: pointer;
 }
 
 .mainwrapper
@@ -75,6 +76,7 @@ html, body
 	width: 90%;
 	margin-left: 5%;
 	padding-left: 10px;
+	padding-right: ;
 	box-sizing: border-box;
 	margin-bottom: 20px;
 	min-height: calc(100vh - 69px - 69px - 40px);
@@ -124,6 +126,16 @@ html, body
 	margin: 0px;
 	vertical-align: top;
 	display: inline-table;
+	width: 80%;
+	padding-left: 10px;
+}
+
+.newstable.hidden
+{
+	box-sizing: border-box;
+	margin: 0px;
+	vertical-align: top;
+	display: none;
 	width: 80%;
 	padding-left: 10px;
 }

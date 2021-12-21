@@ -6,6 +6,9 @@
 	font-weight: bold;
 	padding-top: 10px;
 	padding-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: calc(100% - 40px);
 	text-align: center;
 	color: white;
 	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.75);
@@ -122,7 +125,13 @@ input[type=checkbox]
 	box-sizing: border-box;
 	background-color: white;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+	transition: box-shadow 0.3s;
 	padding: 20px;
+}
+
+.car:hover
+{
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.75);
 }
 
 .newsimg
@@ -185,10 +194,90 @@ input[type=checkbox]
 	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.75);
 }
 
+.cover
+{
+	z-index: 1;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+}
+.buywrapper
+{
+	box-sizing: border-box;
+	width: 33.333%;
+	position: fixed;
+	z-index: 1;
+	position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+.buywrapper > .categoryheader
+{
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: calc(100% - 40px);
+}
+.buypanel
+{
+	box-sizing: border-box;
+	width: 100%;
+	padding: 20px;
+	background-color: white;
+	font-size: 18px;
+}
+.buypanel > .buybutton
+{
+	font-size: 18px;
+}
+input[type="date"]{
+    background-color: white;/*rgb(25, 125, 75);*/
+    padding: 10px;
+    color: black;
+    font-size: 18px;
+    outline: none;
+    border: 3px solid rgb(25, 125, 75);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 7px;
+}
+::-webkit-calendar-picker-indicator{
+    background-color: rgba(25, 125, 75, 0);
+    /*filter: invert(1);*/
+    color: rgb(25, 125, 75);
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+
+}
+
+.buypanel > .buybutton
+{
+	font-weight: normal;
+}
+
+input[type=checkbox] 
+{
+	color: rgb(25, 125, 75)
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+  vertical-align: bottom;
+}
+
 @media screen and (max-width: 1400px)
 {
 	.carwrapper
 	{
 		width: 33.333%;
-	}	
+	}
+	.buywrapper
+	{
+		width: 50%;
+	}
 }

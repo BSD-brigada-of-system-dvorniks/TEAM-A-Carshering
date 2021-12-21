@@ -9,6 +9,8 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<script defer src="scripts/jquery-3.6.0.js"></script>
+	<script defer src="scripts/authorization.js"></script>
 </head>
 <body>
 
@@ -16,77 +18,76 @@
 		<div class="menulist">
 			<a href="index.html" class="logolink"><span style="color: rgb(25, 125, 75);"><i class="fas fa-car"></i></span></a>
 			<a href="index.html" class="logolink">KAR-CARS</a>
-			<a href="" class="menulink2"><i class="far fa-user-circle"></i></a><a href="" class="menulink2">Увійти</a>
+			<span id="userpagelink" class="menulink2"><a href="" class="menulink2"><i class="far fa-user-circle"></i></a><a id="userpagelink" class="menulink2">Особистий кабінет</a></span>
 		</div>
 	</div>
 	
 	<div class="mainwrapper" align="center">
 		<div class="newstable" id="authorization">
-			<div class="accauntwrapper">
+			<div class="accauntwrapper" id="auth_form">
 				<div class="accauntpanel">
 					<div class="categoryheader">
 						Увійти в акаунт
 					</div>
 					<div class="loginform">
 						<br>
-						<input maxlength="25" size="75" placeholder="E-mail або номер телефону">
+						<input id="auth_login" maxlength="25" size="75" placeholder="E-mail або номер телефону">
 						<br>
-						<span style="color: rgba(125, 25, 25, 1); float: right; font-size: 18px" class="invalidloginmessage">
+						<!--<span style="color: rgba(175, 25, 25, 1); float: right; font-size: 18px" class="invalidloginmessage">
 							Не знайдено користувача з такими даними
-						</span>
+						</span>-->
 						<br>	
-						<br>
-						<input maxlength="25" size="75" placeholder="Пароль">
-						<br>
-						<span style="color: rgba(175, 25, 25, 1); float: right; font-size: 18px">
+						
+						<input id="auth_password" maxlength="25" size="75" placeholder="Пароль">
+						<!--<span style="color: rgba(175, 25, 25, 1); float: right; font-size: 18px">
 							Неправильний пароль
-						</span>
+						</span>-->
 					</div>
-					<div class="buybutton" align="center">
+					<div id="login_button" class="buybutton" align="center">
 						Увійти
 					</div>
 					<br>
 					<span style="font-size: 18px; text-align:center;">
 						Не маєте аккаунту? - 
-						<span style="color: rgb(25, 125, 75); box-shadow: 0 2px 0px rgb(25, 125, 75); font-weight: bold; cursor: pointer">
+						<span id="go_reg" style="color: rgb(25, 125, 75); box-shadow: 0 2px 0px rgb(25, 125, 75); font-weight: bold; cursor: pointer">
 							Реєстрація
 						</span>
 					</span>	
 				</div>
 			</div>
-			<br>
-			<div class="accauntwrapper">
+			
+			<div class="accauntwrapper hidden" id="reg_form">
 				<div class="accauntpanel">
 					<div class="categoryheader" align="center">
 						Реєстрація
 					</div>
 					<br>
 					<div class="loginform">
-						<input type="text" maxlength="25" size="75" placeholder="Ім'я">
+						<input id='reg_name' type="text" maxlength="25" size="75" placeholder="Ім'я">
 						<br>
-						<span style="color: rgba(125, 25, 25, 1); float: right; font-size: 18px">
+						<!--<span style="color: rgba(175, 25, 25, 1); float: right; font-size: 18px">
 							Неприпустиме ім'я користувача
 						</span>
+						<br>-->
 						<br>
+						<input id='reg_logindata' maxlength="25" size="75" placeholder="E-mail або номер телефону">
 						<br>
-						<input maxlength="25" size="75" placeholder="E-mail або номер телефону">
-						<br>
-						<span style="color: rgba(125, 25, 25, 1); float: right; font-size: 18px">
+						<!--<span style="color: rgba(175, 25, 25, 1); float: right; font-size: 18px">
 							Користувача з такими даними вже зареєстровано
 						</span>
+						<br>-->
 						<br>
-						<br>
-						<input maxlength="25" size="75" value="" placeholder="Пароль">
-						<br>
-						<span style="color: rgba(125, 25, 25, 1); float: right; font-size: 18px">
+						<input id='reg_password' maxlength="25" size="75" value="" placeholder="Пароль">
+						<!--<br>
+						<span style="color: rgba(175, 25, 25, 1); float: right; font-size: 18px">
 							Занадто короткий пароль
-						</span>
+						</span>-->
 					</div>
 				<div class="buybutton">
-					Увійти
+					Зареєструватися
 				</div>
 				<br>
-				Вже маєте акаунт? - <span style="color: rgb(25, 125, 75); box-shadow: 0 2px 0px rgb(25, 125, 75); font-weight: bold; cursor: pointer;">Увійти</span>
+				Вже маєте акаунт? - <span id="go_auth" style="color: rgb(25, 125, 75); box-shadow: 0 2px 0px rgb(25, 125, 75); font-weight: bold; cursor: pointer;">Увійти</span>
 			</div>
 			</div>
 		</div>
@@ -94,11 +95,11 @@
 
 	<div class="bottommenu">
 		<div class="bottommenulist">
-			<a href="" class="menulink">Контакты</a>
-			<a href="" class="menulink">Правовая информация</a>
+			<a href="" class="menulink">Контакти</a>
+			<a href="" class="menulink">Правова информація</a>
 			<span style="font-size: 24px; color: white; float: right; margin-left: 20px; padding-left: 10px;">
   				<i class="fab fa-telegram"></i>
-  				<i class="fab fa-vk"></i>
+  				<!--<i class="fab fa-vk"></i>-->
 			</span>
 		</div>
 	</div>
