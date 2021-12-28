@@ -1,8 +1,8 @@
 $(document).ready(function() {
-      if(isNaN(localStorage.getItem("username"))) 
-      {
-          window.location.href = 'authorization.html';  
-      } 
+      //if(isNaN(localStorage.getItem("username"))) 
+      //{
+      //    window.location.href = 'authorization.html';  
+      //} 
       $('#userprofile').show();
       $('#useractivecars').hide();
       $('#userpayment').hide();

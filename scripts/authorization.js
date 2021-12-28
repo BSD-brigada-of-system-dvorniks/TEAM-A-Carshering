@@ -15,25 +15,18 @@ $('#go_reg').on('click', function(){
       //$('#reg_form').css('dispaly','inline-grid');
 });
 
-$('#reg_form').find('.buybutton').on('click', function(){
-      //console.log('1');
-      localStorage.setItem('username', $('#reg_name').val());
-      localStorage.setItem('userlogin', $('#reg_logindata').val());
-      localStorage.setItem('userpassword', $('#reg_password').val());
-      window.location.href = "userpage.html";
-      //console.log(localStorage.getItem('username'), localStorage.getItem('userlogin'), localStorage.getItem('userpassword'));
-});
+
 
 $('#login_button').on('click', function(){
       var login = $('#auth_login').val()
       var password = $('#auth_password').val()
       console.log(login, password);
       let data = {
-        Login: login,
+        Username: login,
         Password: password,
       };
       console.log(login, password);
-      fetch("/get_time", {
+      fetch("http://localhost:9010/api/login", {
             headers: {
                   'Accept': 'application/json',
                   'Content-Type': 'application/json'
@@ -44,10 +37,51 @@ $('#login_button').on('click', function(){
             response.text().then(function (data) {
                   let result = JSON.parse(data);
                   console.log(result)
+                  if (result.status === 'success'){
+                        localStorage.setItem('username', $('#reg_name').val());
+                        localStorage.setItem('userlogin', login);
+                        localStorage.setItem('userpassword', password);
+                        window.location.href = "userpage.html";
+                  }
             });
       }).catch((error) => {
             console.log(error)
       });
+});
+
+$('#reg_button').on('click', function(){
+      
+      var login = $('#reg_logindata').val()
+      var password = $('#reg_password').val()
+      console.log(login, password);
+      let data = {
+        Username: login,
+        Password: password,
+      };
+      console.log(login, password);
+      fetch("http://localhost:9010/api/register", {
+            headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(data)
+      }).then((response) => {
+            response.text().then(function (data) {
+                  let result = JSON.parse(data);
+                  console.log(result)
+                  console.log(result.status)
+                  if (result.status === 'success'){
+                        localStorage.setItem('username', $('#reg_name').val());
+                        localStorage.setItem('userlogin', login);
+                        localStorage.setItem('userpassword', password);
+                        window.location.href = "userpage.html";
+                  }
+            });
+      }).catch((error) => {
+            console.log(error)
+      });
+      
 });
 
 $('#userpagelink').on('click', function(){
@@ -60,3 +94,4 @@ $('#userpagelink').on('click', function(){
           window.location.href = 'userpage.html';  
       }
 });
+
